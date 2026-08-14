@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pysigsaly"
+version = "0.1.0"
+description = "SIGSALY (Bell Labs Project X, 1943) secure voice system emulator in numpy/scipy"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "scipy>=1.11"]
+
+[project.optional-dependencies]
+dev = ["black", "pylint", "pytest", "pytest-cov", "pytest-xdist"]
+
+[project.urls]
+Homepage = "https://github.com/anarkiwi/pysigsaly"
+
+[project.scripts]
+pysigsaly = "pysigsaly.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pysigsaly*"]
+
+[tool.pylint.main]
+disable = ["too-many-arguments", "too-many-locals", "too-many-instance-attributes", "too-few-public-methods", "duplicate-code", "redefined-outer-name"]
+good-names = ["f0", "n", "x", "y", "lo", "hi", "db", "rng", "p", "k", "c", "i", "j", "_"]
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pytest.ini_options]
+addopts = "-n auto"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
