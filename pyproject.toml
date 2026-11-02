@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "SIGSALY (Bell Labs Project X, 1943) secure voice system emulator in numpy/scipy"
 readme = "README.md"
 license = "Apache-2.0"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = ["numpy>=1.26", "scipy>=1.11"]
 
 [project.optional-dependencies]
@@ -36,4 +36,4 @@ testpaths = ["tests"]
 
 [tool.black]
 line-length = 120
-target-version = ["py311"]
+target-version = ["py312"]
